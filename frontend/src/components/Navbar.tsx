@@ -10,13 +10,13 @@ const Navbar = () => {
             <h2>Logo</h2>
             <ul className="hidden md:flex gap-x-6 text-gray">
               <li>
-                <Link href="/about">
-                  <p>About Us</p>
+                <Link href="/">
+                  <p>Home</p>
                 </Link>
               </li>
               <li>
-                <Link href="/services">
-                  <p>Services</p>
+                <Link href="/business">
+                  <p>Businesses</p>
                 </Link>
               </li>
               <li>

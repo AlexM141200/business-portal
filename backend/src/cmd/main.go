@@ -11,12 +11,6 @@ import (
 	"api/src/pkg/handlers"
 )
 
-type User struct {
-	Id    int    `json:"id"`
-	Name  string `json:"name"`
-	Email string `json:"email"`
-}
-
 // main function
 func main() {
 	//connect to database
@@ -26,15 +20,10 @@ func main() {
 	}
 	defer db.Close()
 
-	// create table if not exists
-	_, err = db.Exec("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name TEXT, email TEXT)")
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	// create router
 	router := mux.NewRouter()
 	handlers.SetupRoutes(router, db)
+	handlers.SetupBusinessRoutes(router, db)
 
 	// wrap the router with CORS and JSON content type middlewares
 	enhancedRouter := enableCORS(jsonContentTypeMiddleware(router))
