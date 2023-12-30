@@ -20,8 +20,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/contacts">
-                  <p>Contacts</p>
+                <Link href="/users">
+                  <p>User Management</p>
                 </Link>
               </li>
             </ul>
